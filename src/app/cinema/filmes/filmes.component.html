@@ -1,0 +1,39 @@
+<section class="box-filmes">
+
+    <h1 class="title">Dados do site Adoro Cinema</h1>
+
+
+<p-panel header="Filmes em cartaz">
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-6 ui-lg-4" *ngFor="let filme of this.listaFilmes">
+            <p-card >
+                <p-header>
+                    <div class="box-img">
+                        <img src="{{ filme.image }}" alt="{{ filme.titulo }}">
+                    </div>
+                </p-header>
+        
+                <ul class="box-info">
+                    <li class="info-item">Título: {{ filme.titulo }}</li>
+                    <li class="info-item">Data: {{ filme.date }}</li>
+                    <li class="info-item">Direção: {{ filme.direcao }}</li>
+                    <li class="info-item">Elenco: {{ filme.elenco }}</li>
+                </ul>
+            
+            </p-card>
+        </div>
+    
+        <div class="box-buttons">
+            <button (click)="previosPage()" pTooltip="Visualizar próxima página" pButton type="button" label="Anterior" class="ui-button-secondary"></button>
+            <button (click)="nextPage()" pTooltip="Visualizar página anteror" pButton type="button" label="Próxima" class="ui-button-secondary" ></button>
+        </div>
+    </div>
+
+    <div class="loading-filmes">
+        
+    </div>
+</p-panel>
+
+
+
+</section>
